@@ -1,7 +1,7 @@
 # Mahasense
 
 ## 1. Judul Proyek & Ringkasan
-**Mahasense (CUKIMAI - Konsultasi Mahasiswa dengan AI)**
+**Mahasense (Consultation and Understanding og Campus Issues With Machine Learning and And Artificial Intelligence)**
 Mahasense adalah sebuah aplikasi berbasis Artificial Intelligence (AI) yang berfungsi sebagai wadah konsultasi khusus untuk pelajar dan mahasiswa. Melalui penggunaan Natural Language Processing (NLP) dan integrasi LLM (Large Language Model), sistem mampu mengidentifikasi kategori masalah, menilai tingkat keseriusan, serta menyarankan solusi beserta 'To-Do List' yang praktis.
 
 ## 2. Teknologi yang Digunakan (Tech Stack)
