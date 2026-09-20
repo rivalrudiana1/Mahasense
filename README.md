@@ -1,52 +1,52 @@
 # Mahasense (CUKIMAI)
 
-## 1. Tajuk Projek & Ringkasan
+## 1. Judul Proyek & Ringkasan
 **Mahasense (CUKIMAI - Konsultasi Mahasiswa dengan AI)**
-Mahasense adalah satu aplikasi berasaskan kecerdasan buatan (AI) yang berfungsi sebagai medium perundingan khusus untuk pelajar dan mahasiswa. Melalui penggunaan Pemprosesan Bahasa Asli (NLP) dan integrasi LLM (Large Language Model), sistem berupaya mengenal pasti kategori masalah, menilai tahap keseriusan, serta mencadangkan solusi berserta 'To-Do List' yang praktikal.
+Mahasense adalah sebuah aplikasi berbasis Artificial Intelligence (AI) yang berfungsi sebagai wadah konsultasi khusus untuk pelajar dan mahasiswa. Melalui penggunaan Natural Language Processing (NLP) dan integrasi LLM (Large Language Model), sistem mampu mengidentifikasi kategori masalah, menilai tingkat keseriusan, serta menyarankan solusi beserta 'To-Do List' yang praktis.
 
 ## 2. Teknologi yang Digunakan (Tech Stack)
 - **Frontend**: Streamlit (Framework Web Python)
 - **Backend**: Python 3, Pandas, Scikit-Learn
-- **Model Pembelajaran Mesin**: TF-IDF Vectorizer, Logistic Regression (untuk klasifikasi berbilang output)
-- **Kecerdasan Buatan (LLM)**: Groq API (`groq_client.py`) untuk menjana solusi berstruktur berdasarkan masalah pelajar.
+- **Model Machine Learning**: TF-IDF Vectorizer, Logistic Regression (untuk klasifikasi *multi-output*)
+- **Artificial Intelligence (LLM)**: Groq API (`groq_client.py`) untuk men-*generate* solusi terstruktur berdasarkan masalah mahasiswa.
 
-## 3. Ciri-Ciri Utama & Logik Perniagaan
-- **Klasifikasi Masalah Automatik**: Model AI dapat mengenal pasti:
-  1. Kategori Utama (Contoh: Akademik, Kewangan, dll).
+## 3. Fitur Utama & Logika Bisnis
+- **Klasifikasi Masalah Otomatis**: Model AI dapat mengidentifikasi:
+  1. Kategori Utama (Contoh: Akademik, Keuangan, dll).
   2. Kategori Pendukung.
-  3. Tahap Masalah (Severity level).
-- **Penjanaan Solusi Berstruktur**: Menggunakan keupayaan Groq LLM untuk menyusun satu jawapan bermakna berserta senarai tugasan (To-Do List) sebagai penyelesaian.
-- **Latihan Model Kendiri**: Terdapat modul skrip untuk melatih semula model klasifikasi teks berasaskan set data CSV.
+  3. Tingkat Keparahan (Severity level).
+- **Pembuatan Solusi Terstruktur**: Menggunakan kemampuan Groq LLM untuk merangkai jawaban bermakna beserta daftar tugas (To-Do List) sebagai penyelesaian.
+- **Pelatihan Model Mandiri**: Terdapat modul *script* untuk melatih ulang model klasifikasi teks berbasis *dataset* CSV.
 
-## 4. Struktur Direktori Projek
-- `app.py`: Titik mula (entry point) utama untuk antara muka pengguna berasaskan web Streamlit dan aliran logik aplikasi.
-- `train_model.py` / `auto_train.py`: Skrip untuk membersihkan teks, menghasilkan ciri (TF-IDF), melatih model (Logistic Regression), dan menyimpannya (sebagai `pkl`).
-- `groq_client.py`: Modul penghubung klien untuk berinteraksi dengan API Groq LLM bagi tujuan penjanaan teks respon.
-- `*.pkl`: Fail model terlatih (seperti `model_utama.pkl`, `vectorizer.pkl`, `encoder.pkl`).
-- `dataset.csv`: Repositori data rawatan bagi latihan algoritma pemisah teks masalah pelajar.
+## 4. Struktur Direktori Proyek
+- `app.py`: Titik masuk (*entry point*) utama untuk antarmuka pengguna berbasis web Streamlit dan alur logika aplikasi.
+- `train_model.py` / `auto_train.py`: *Script* untuk membersihkan teks, membuat fitur (TF-IDF), melatih model (Logistic Regression), dan menyimpannya (sebagai `pkl`).
+- `groq_client.py`: Modul penghubung klien untuk berinteraksi dengan API Groq LLM guna keperluan generasi teks respons.
+- `*.pkl`: File model yang telah dilatih (seperti `model_utama.pkl`, `vectorizer.pkl`, `encoder.pkl`).
+- `dataset.csv`: Repositori data mentah untuk pelatihan algoritma klasifikasi teks masalah mahasiswa.
 
-## 5. Panduan Pemasangan & Cara Menjalankan Projek
-Untuk menjalankan aplikasi analitik AI ini pada pelayan tempatan:
+## 5. Panduan Instalasi & Cara Menjalankan Proyek
+Untuk menjalankan aplikasi analitik AI ini pada server lokal:
 
-1. **Sediakan Persekitaran Virtual Python (Virtual Environment)** (Disyorkan):
+1. **Siapkan *Virtual Environment* Python** (Disarankan):
    ```bash
    python -m venv venv
    # Di Windows:
    venv\Scripts\activate
    ```
-2. **Pasang Dependensi Python**:
-   Pasang pustaka asas berikut (bergantung kepada keperluan skrip):
+2. **Instal *Dependencies* Python**:
+   Instal pustaka dasar berikut (tergantung pada kebutuhan *script*):
    ```bash
    pip install streamlit pandas scikit-learn groq
    ```
 3. **Tetapkan Groq API Key**:
-   Pastikan kunci API Groq diletakkan dalam environment anda (contoh: pembolehubah `GROQ_API_KEY`) atau dikonfigurasikan di dalam kod.
+   Pastikan *API key* Groq diletakkan dalam *environment* Anda (contoh: variabel `GROQ_API_KEY`) atau dikonfigurasikan di dalam kode.
 4. **Jalankan Aplikasi Web**:
    ```bash
    streamlit run app.py
    ```
-   Aplikasi akan dimuatkan di pelayar web, biasanya pada alamat `http://localhost:8501`.
+   Aplikasi akan dimuat di peramban web, biasanya pada alamat `http://localhost:8501`.
 
-## 6. Endpoint API / Skema Pangkalan Data
-- Tidak melibatkan pengkalan data tradisional/SQL (menggunakan model yang telah dilatih `.pkl` dan data `.csv`).
-- Menggunakan endpoint integrasi API luaran untuk mengakses model pengolahan LLM menerusi API Groq.
+## 6. Endpoint API / Skema Database
+- Tidak melibatkan database tradisional/SQL (menggunakan model yang telah dilatih `.pkl` dan data `.csv`).
+- Menggunakan endpoint integrasi API eksternal untuk mengakses model pemrosesan LLM melalui API Groq.
