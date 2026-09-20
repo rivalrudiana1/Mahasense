@@ -1,4 +1,4 @@
-# Mahasense (CUKIMAI)
+# Mahasense
 
 ## 1. Judul Proyek & Ringkasan
 **Mahasense (CUKIMAI - Konsultasi Mahasiswa dengan AI)**
